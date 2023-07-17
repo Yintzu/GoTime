@@ -1,0 +1,32 @@
+.countdownButton {
+  border-radius: 100%;
+  width: 50vw;
+  aspect-ratio: 1;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-timing-function: cubic-bezier(0.1, 0.76, 0.63, 1.03) !important;
+  
+}
+
+.buttonText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bounce {
+  animation: bounce 1.2s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
