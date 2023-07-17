@@ -8,7 +8,7 @@ type CountdownButtonProps = {
 
 const CountdownButton = ({ startTimer }: CountdownButtonProps) => {
   const audioRef = useRef<HTMLAudioElement>(null)
-  const [buttonText, setButtonText] = useState("Go time")
+  const [buttonText, setButtonText] = useState("Start")
   const [playBounce, setPlayBounce] = useState(false)
   const [isCounting, setIsCounting] = useState(false)
 
@@ -20,6 +20,7 @@ const CountdownButton = ({ startTimer }: CountdownButtonProps) => {
       setButtonText(strings[index])
       index++
       if (index === strings.length) {
+        startTimer()
         setIsCounting(false)
         setPlayBounce(true)
         clearInterval(interval)
@@ -29,7 +30,6 @@ const CountdownButton = ({ startTimer }: CountdownButtonProps) => {
 
   const handleClick = () => {
     if (isCounting) return
-    startTimer()
     setIsCounting(true)
     countdownButtonText()
     audioRef.current!.play()

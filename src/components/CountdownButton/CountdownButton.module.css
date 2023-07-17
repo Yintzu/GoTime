@@ -3,12 +3,12 @@
   width: 50vw;
   max-width: 250px;
   aspect-ratio: 1;
-  background: green;
+  background: #7900808a;
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(2px 4px 6px black);
   animation-timing-function: cubic-bezier(0.1, 0.76, 0.63, 1.03) !important;
-  
 }
 
 .buttonText {

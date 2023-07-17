@@ -22,7 +22,7 @@ export default function Wheel(props: {
   timerActive?: boolean
 }) {
   const perspective = props.perspective || "center"
-  const wheelSize = 20
+  const wheelSize = 10
   const slides = props.length
   const slideDegree = 360 / wheelSize
   const slidesPerView = props.loop ? 9 : 1
@@ -30,7 +30,7 @@ export default function Wheel(props: {
     null
   )
   const size = useRef(0)
-  const options = useRef<KeenSliderOptions>({
+  const options: KeenSliderOptions = {
     slides: {
       number: slides,
       origin: props.loop ? "center" : "auto",
@@ -61,9 +61,11 @@ export default function Wheel(props: {
     },
     rubberband: !props.loop,
     mode: "free-snap",
-  })
-
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>(options.current)
+    disabled: props.timerActive,
+  }
+  console.log("render")
+  console.log('options', options)
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>(options)
 
   const [radius, setRadius] = useState(0)
 

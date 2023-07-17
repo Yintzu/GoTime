@@ -1,7 +1,8 @@
 import { useState } from "react"
 import CountdownButton from "./components/CountdownButton/CountdownButton"
-import FocusTime from "./components/FocusTime/FocusTime"
+import TimePicker from "./components/TimePicker/TimePicker"
 import "./App.css"
+import background from "./assets/background.png"
 
 function App() {
   const [time, setTime] = useState({ minutes: 0, seconds: 59 })
@@ -29,10 +30,11 @@ function App() {
   }
 
   return (
-    <>
-      <FocusTime time={time} setTime={setTime} timerActive={timerActive}/>
+    <div className="app" style={{ backgroundImage: `url(${background})` }}>
+      <h1 className="title">Go time</h1>
+      <TimePicker time={time} setTime={setTime} timerActive={timerActive} />
       <CountdownButton startTimer={startTimer} />
-    </>
+    </div>
   )
 }
 

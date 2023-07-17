@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .wheel.keen-slider {
   display: block;
   color: #fff;
@@ -28,7 +22,7 @@ body {
   justify-content: center;
   perspective: 1000px;
   transform-style: preserve-3d;
-  height: 16%;
+  height: 30%;
   width: 100%;
 }
 
@@ -46,15 +40,16 @@ body {
 
 .wheel__shadow-top,
 .wheel__shadow-bottom {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
+  background: linear-gradient( to bottom, #7b3eb1bf 0%, #7b3eb100 50% );
+  /* background: black; */
+  /* background-color: white; */
+  /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); */
+  /* -webkit-mask-image: linear-gradient(to bottom, white, transparent); */
+  mask-type: alpha;
   left: 0;
-  height: calc(42% + 2px);
+  height: calc(35% + 2px);
   width: 100%;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid #f0ccf1;
   position: relative;
   margin-top: -2px;
   z-index: 5;
@@ -62,13 +57,13 @@ body {
 
 .wheel__shadow-bottom {
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.9) 100%
+    to top,
+    #7b3eb1bf 0%,
+    #7b3eb100 50%
   );
   margin-top: 2px;
   border-bottom: none;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #f0ccf1;
 }
 
 .wheel__label {
@@ -84,7 +79,7 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   display: flex;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   height: 100%;
   width: 100%;

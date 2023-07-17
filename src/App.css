@@ -2,10 +2,31 @@
   box-sizing: border-box;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  --text-shadow: 2px 2px black;
+  --theme-primary: #7b3eb1;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  background-position: -2064px 0px;
+  background-size: 413%;
+}
+
+.title {
+  text-shadow: var(--text-shadow);
 }
