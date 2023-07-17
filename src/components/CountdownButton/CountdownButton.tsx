@@ -2,7 +2,11 @@ import React, { useRef, useState } from "react"
 import style from "./CountdownButton.module.css"
 import countdownAudio from "../../assets/countdown.wav"
 
-const CountdownButton = () => {
+type CountdownButtonProps = {
+  startTimer: () => void
+}
+
+const CountdownButton = ({ startTimer }: CountdownButtonProps) => {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [buttonText, setButtonText] = useState("Go time")
   const [playBounce, setPlayBounce] = useState(false)
@@ -25,6 +29,7 @@ const CountdownButton = () => {
 
   const handleClick = () => {
     if (isCounting) return
+    startTimer()
     setIsCounting(true)
     countdownButtonText()
     audioRef.current!.play()

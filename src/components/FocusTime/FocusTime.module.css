@@ -1,6 +1,17 @@
+.focusTime {
+  margin-bottom: 50px;
+}
+
 .title {
   display: block;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 50px;
+}
+
+.timePicker {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000; */
 }

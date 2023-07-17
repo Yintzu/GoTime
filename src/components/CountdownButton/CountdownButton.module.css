@@ -1,6 +1,7 @@
 .countdownButton {
   border-radius: 100%;
   width: 50vw;
+  max-width: 250px;
   aspect-ratio: 1;
   background: green;
   display: flex;
