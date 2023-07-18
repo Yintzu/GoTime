@@ -13,7 +13,7 @@ type TimePickerProps = {
 const TimePicker = ({ time, setTime, timerActive }: TimePickerProps) => {
   return (
     <div className={style.timePicker}>
-      <div style={{ width: 100, height: "100%" }}>
+      <div style={{ width: 120, height: "100%" }}>
         <Wheel
           initIdx={1}
           length={60}
@@ -26,7 +26,7 @@ const TimePicker = ({ time, setTime, timerActive }: TimePickerProps) => {
           timerActive={timerActive}
         />
       </div>
-      <div style={{ width: 100, height: "100%" }}>
+      <div style={{ width: 120, height: "100%" }}>
         <Wheel
           initIdx={35}
           length={60}

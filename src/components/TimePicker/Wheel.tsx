@@ -138,7 +138,7 @@ export default function Wheel(props: {
         >
           {slideValues().map(({ style, value }, idx) => (
             <div className="wheel__slide" style={style} key={idx}>
-              <span>{value}</span>
+              <span>{String(value).padStart(2, "0")}</span>
             </div>
           ))}
         </div>
