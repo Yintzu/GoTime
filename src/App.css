@@ -9,8 +9,11 @@
   justify-content: center;
   align-items: center;
 
-  --text-shadow: 2px 2px black;
+  --shadow-color: #2a004f;
+  --text-shadow: 2px 2px var(--shadow-color);
+
   --theme-primary: #7b3eb1;
+  --theme-detail: #f0ccf1;
 }
 
 .app {
@@ -21,12 +24,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 35px;
 
   background-position: -2064px 0px;
   background-size: 413%;
 }
 
 .title {
+  font-size: 52px;
   text-shadow: var(--text-shadow);
 }

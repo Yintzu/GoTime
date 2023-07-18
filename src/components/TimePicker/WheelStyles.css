@@ -4,6 +4,9 @@
   height: 100%;
   overflow: visible;
   width: 100%;
+
+  --wheel__center: 48%;
+  --wheel__edges: calc(52% / 2);
 }
 .wheel--perspective-right .wheel__inner {
   perspective-origin: calc(50% + 100px) 50%;
@@ -22,7 +25,7 @@
   justify-content: center;
   perspective: 1000px;
   transform-style: preserve-3d;
-  height: 30%;
+  height: var(--wheel__center);
   width: 100%;
 }
 
@@ -30,6 +33,7 @@
   font-weight: bold;
   position: absolute;
   right: -5px;
+  font-size: 40px;
 }
 
 .wheel__slides {
@@ -40,30 +44,20 @@
 
 .wheel__shadow-top,
 .wheel__shadow-bottom {
-  background: linear-gradient( to bottom, #7b3eb1bf 0%, #7b3eb100 50% );
-  /* background: black; */
-  /* background-color: white; */
-  /* mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); */
-  /* -webkit-mask-image: linear-gradient(to bottom, white, transparent); */
+  background: linear-gradient(to bottom, #7b3eb1bf 0%, #7b3eb100 50%);
   mask-type: alpha;
   left: 0;
-  height: calc(35% + 2px);
+  height: var(--wheel__edges);
   width: 100%;
-  border-bottom: 2px solid #f0ccf1;
+  border-bottom: 2px solid var(--theme-detail);
   position: relative;
-  margin-top: -2px;
   z-index: 5;
 }
 
 .wheel__shadow-bottom {
-  background: linear-gradient(
-    to top,
-    #7b3eb1bf 0%,
-    #7b3eb100 50%
-  );
-  margin-top: 2px;
+  background: linear-gradient(to top, #7b3eb1bf 0%, #7b3eb100 50%);
   border-bottom: none;
-  border-top: 2px solid #f0ccf1;
+  border-top: 2px solid var(--theme-detail);
 }
 
 .wheel__label {
@@ -79,10 +73,16 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   display: flex;
-  font-size: 24px;
+  font-size: 64px;
   font-weight: 400;
   height: 100%;
   width: 100%;
   position: absolute;
   justify-content: flex-end;
+
+  padding-right: 17%;
+}
+
+.wheel__slide span {
+  padding-bottom: 4px;
 }

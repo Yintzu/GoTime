@@ -12,7 +12,7 @@ export default function Wheel(props: {
   loop?: boolean
   perspective?: "left" | "right" | "center"
   setValue?: (relative: number, absolute: number) => string
-  width: number
+  // width: number
   showColon?: boolean
   time: { minutes: number; seconds: number }
   unit: "minutes" | "seconds"
@@ -22,7 +22,8 @@ export default function Wheel(props: {
   timerActive?: boolean
 }) {
   const perspective = props.perspective || "center"
-  const wheelSize = 10
+  const wheelSize = 6
+  const gapModifier = -4
   const slides = props.length
   const slideDegree = 360 / wheelSize
   const slidesPerView = props.loop ? 9 : 1
@@ -64,7 +65,7 @@ export default function Wheel(props: {
     disabled: props.timerActive,
   }
   console.log("render")
-  console.log('options', options)
+  console.log("options", options)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>(options)
 
   const [radius, setRadius] = useState(0)
@@ -104,8 +105,12 @@ export default function Wheel(props: {
           ? 180
           : distance * (360 / wheelSize) * -1
       const style = {
-        transform: `rotateX(${rotate}deg) translateZ(${radius}px)`,
-        WebkitTransform: `rotateX(${rotate}deg) translateZ(${radius}px)`,
+        transform: `rotateX(${rotate}deg) translateZ(${
+          radius + gapModifier
+        }px)`,
+        WebkitTransform: `rotateX(${rotate}deg) translateZ(${
+          radius + gapModifier
+        }px)`,
       }
       const value = props.setValue
         ? props.setValue(i, sliderState.abs + Math.round(distance))
@@ -128,7 +133,9 @@ export default function Wheel(props: {
         }}
       />
       <div className="wheel__inner">
-        <div className="wheel__slides" style={{ width: props.width + "px" }}>
+        <div
+          className="wheel__slides" /* style={{ width: props.width + "px" }} */
+        >
           {slideValues().map(({ style, value }, idx) => (
             <div className="wheel__slide" style={style} key={idx}>
               <span>{value}</span>

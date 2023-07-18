@@ -13,11 +13,11 @@ type TimePickerProps = {
 const TimePicker = ({ time, setTime, timerActive }: TimePickerProps) => {
   return (
     <div className={style.timePicker}>
-      <div style={{ width: 100, height: 180 }}>
+      <div style={{ width: 100, height: "100%" }}>
         <Wheel
           initIdx={1}
           length={60}
-          width={23}
+          // width={23}
           loop={true}
           showColon
           time={time}
@@ -26,11 +26,11 @@ const TimePicker = ({ time, setTime, timerActive }: TimePickerProps) => {
           timerActive={timerActive}
         />
       </div>
-      <div style={{ width: 100, height: 180 }}>
+      <div style={{ width: 100, height: "100%" }}>
         <Wheel
           initIdx={35}
           length={60}
-          width={23}
+          // width={23}
           loop={true}
           time={time}
           unit="seconds"
